@@ -1,0 +1,30 @@
+# Flutter related
+frontend/.dart_tool/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/.packages
+frontend/build/
+frontend/pubspec.lock
+frontend/*.log
+frontend/*.txt
+
+# Node / Firebase related
+backend/node_modules/
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# OS related
+.DS_Store
+Thumbs.db
+
+# IDE related
+.idea/
+.vscode/
+*.iml
+
+# Temporary files
+*.bat
+!deploy.bat
+!seed_db.bat

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <title>MultiProServices</title>
+  <link rel="manifest" href="manifest.json">
+  <script>
+    var serviceWorkerVersion = null;
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfA7GMEq6K22IUJBFxWSLhtED5zLok60I"></script>
+  <script src="flutter.js" defer></script>
+</head>
+
+<body>
+  <div id="loading"
+    style="display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif;">
+    <div style="text-align: center;">
+      <h2>MultiPro Services</h2>
+      <p>Loading...</p>
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', function (ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function (engineInitializer) {
+          engineInitializer.initializeEngine().then(function (appRunner) {
+            var loading = document.getElementById('loading');
+            if (loading) loading.style.display = 'none';
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
